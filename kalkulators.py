@@ -15,7 +15,7 @@ def btnClick(number):
 def vienads():
     global num2
     global num1
-    mathOp= str
+    global mathOp
     num2=(float(e.get()))
     result=0
     if mathOp=="+":
@@ -46,7 +46,11 @@ def btnCommand(command):
         e.delete(0,END)
         return 0
 
-
+def Clear():
+     e.delete(0,END)
+     num1=0
+     mathOp=""
+     return 0
 
 
 
@@ -67,7 +71,7 @@ btnSum=Button(mansLogs,text="+",padx="40",pady="20", command=lambda:btnCommand("
 btnSub=Button(mansLogs,text="-",padx="40",pady="20", command=lambda:btnCommand("-"))
 btnMul=Button(mansLogs,text="*",padx="40",pady="20", command=lambda:btnCommand("*"))
 btnDiv=Button(mansLogs,text="/",padx="40",pady="20", command=lambda:btnCommand("/"))
-btnC=Button(mansLogs,text="C",padx="40",pady="20")
+btnC=Button(mansLogs,text="C",padx="40",pady="20", command=Clear)
 btnEq=Button(mansLogs,text="=",padx="40",pady="20", command=vienads)
 btnLog=Button(mansLogs,text="log",padx="40",pady="20")
 btnPM=Button(mansLogs,text="+/-",padx="40",pady="20")
